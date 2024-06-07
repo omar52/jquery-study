@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+    <script src="/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        // keydown event
+        $(":text").keyup(function () {
+          let userInput = $(this).val();
+          $("tr").each(function () {
+            let currentValue = $(this).children().first().text();
+            if (
+              currentValue
+                .toLocaleLowerCase()
+                .indexOf(userInput.toLocaleLowerCase()) != -1
+            ) {
+              $(this).show(500);
+            } else {
+              $(this).hide(500);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" />
+    <table>
+      <tr>
+        <td>omar</td>
+        <td>aya</td>
+      </tr>
+      <tr>
+        <td>ali</td>
+        <td>esraa</td>
+      </tr>
+      <tr>
+        <td>ahmed</td>
+        <td>atef</td>
+      </tr>
+      <tr>
+        <td>moustafah</td>
+        <td>leen</td>
+      </tr>
+    </table>
+  </body>
+</html>

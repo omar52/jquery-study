@@ -173,3 +173,41 @@ we can got to the body and write  ===> onload="function()"
 //     });
 //   });
 // });
+
+//===================================>>>>> [DOM Traversing] <<<<======================================//
+//1- childern() -----> return all main children
+//2- is()       -----> ask for type of the current element and return boolean value
+//3- next()     -----> return the next direct element in the same level
+//4- nextAll()  -----> return the all next direct elements in array form in the same level
+//5- prev()     -----> return the previous direct element in the same level
+//6- prevAll()  -----> return the all previous direct elements in array form in the same level
+//7- parent()   -----> return the direct parent of the current element
+//8- parents()  -----> return array of the wrapping parents of the current element
+//9- childern("certain element")  ----> return all children or all children of certain type
+
+//===================================>>>>> [DOM Manipulation] <<<<======================================//
+// It work in three place
+//1- inside the ELement(between the element tags)
+
+//1.1-append()      ====> add content to the last  ------------->>> $("li:first").append("<b>hello</b>")
+//1.2-appendTo()    ====> the same but its syntax is  ------>>>   $("element").appendTo($("someelement")) in the last
+//1.3-prepend()     ====> add content to the first ------------->>> $("li:first").prepend("<b>hello</b>")
+//1.4-prependTo()   ====> the same but its syntax is  ------>>>   $("element").appendTo($("someelement")) in the first
+
+//2- outside the ELement
+
+//2.1 - after()                    ====> add element after another element  --------->>>  $("li:first").after("<b>hello</b>")
+//2.2 - before()                   ====> add element before another element --------->>>  $("li:first").before("<b>hello</b>")
+//2.3 - insertAfter()              ====> add element after another element  --------->>>  ("<b>hello</b>").insertAfter($("li:first"))
+//2.4 - insertBefore()             ====> add element before another element  --------->>>  ("<b>hello</b>").insertBefore($("li:first"))
+
+//3- around the ELement
+
+//3.1 wrap()      ====> wrap the whole element by another element   ---->   $("li:first").wrap("<p></p>")======>  <p><li>li-content</li></p>
+//3.2 warpInner() ====> wrap the inner text of the element by another element ---->   $("li:first").wrapInner("<p></p>") ======>  <li><p>li-content</p></li>li
+//3.3 wrapAll()   ====> wrap all element by some element ----->$("li:first").wrap("<p></p>")======>  <p><li>li1-content</li> <li>li2-content</li> <li>li3-content</li> </p>
+
+//===================================>>>>> [DOM Manipulation --- clearing element] <<<<======================================//
+//1- empty() ,, delete the content of the element
+//2- remove() ,, delete the entire element  and return the element removed and in recover does not recover the events
+//3- detach() ,, delete the entire element  and return the element removed and in recover also recover the events   (it is preferable)

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <SCript src="/jquery-3.7.1.js"></SCript>
+    <title>CLONING</title>
+    <style>
+        span{
+            cursor: pointer;
+        }
+    </style>
+    <SCRipt>
+        $(function(){
+                $("span").mouseover(function () {
+                        $(this).fadeOut(400).fadeIn(400);
+                  })
+                $("span").click(function () {
+                        // $("li").append($("this"));   /// ====> this ====> span ////// on appending an existing element it is transported not cloning but the events are still existed
+                        // $("li").append($("this").clone());   /// this ====> span //////====> on appending an existing element with cloning it is cloned but the events are not existed
+                        $("li").append($("this").clone(true));   /// this ====> span //////====> on appending an existing element with cloning it is cloned but the events are  existed with value true
+                  })
+        })
+    </SCRipt>
+</head>
+<body>
+    <ul>
+        <li>welcome</li>
+        <li>about</li>
+        <li>contact</li>
+    </ul>
+    <span style="color: red; font-size: 30px;"> &hearts;</span>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register events (on - function)</title>
+    <script src="/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        // direct registration (not working with future elements) === > future element : any element is added in the run time after loading the page
+
+        // 1- $("li").click(function(){});   ====> short Hand
+        
+        // $("li")
+        //   .click(function () {
+        //     $(this).css("color", "red");
+        //   })
+        //   .dblclick(function () {
+        //     $(this).css("color", "black");
+        //   });
+        
+        // 2- $("li").on("click",function(){});
+        
+        // $("li").on("click", function () {
+        //   $(this).css("color", "red");
+        // });
+        // $("li").on("dblclick", function () {
+        //   $(this).css("color", "black");
+        // });
+        
+        // if the two events do the same thing we can write them in short method
+        
+        // $("li").on("click dblclick", function () {
+        //   $(this).css("color", "red");
+        // });
+        
+        // for future elements ==> delegation (تفويض)
+        
+        // $("ul").on("click", "li", function () {
+        //   //$(this)====> li
+        //   $(this).css("color", "red");
+        // });
+
+        // for many events in on function method
+        
+        $("li").on({
+          "click":function(){},
+          "dblclick":function(){},
+          "mouseover":function(){},
+          "mouseout ":function(){},
+        })
+
+        // to make the code above avaiable to future element
+
+        $("ul").on({
+          "click":function(){},
+          "dblclick":function(){},
+          "mouseover":function(){},
+          "mouseout ":function(){},
+        },"li")
+
+
+
+
+
+
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>welcome</li>
+      <li>hey</li>
+      <li>please do not!!!</li>
+    </ul>
+  </body>
+</html>
