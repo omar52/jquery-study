@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            // ajax = asynchronous javascript and XML
+            // Async Calls 
+            //1- XHR => XMLHttpRequest
+            //2- Ajax =>
+            //3- fetch API => return promise > whicj means that we can use then() and catch() methods but the best is to use async and await
+
+
+            //1- ajax
+            //a- load html
+            // $("input:eq(0)").click(function(){
+            //     $.ajax({
+            //         type: "get",
+            //         url: "new.html",
+            //         dataType: "html",
+            //         success: function (response) {
+            //             $("div").html(response)
+            //         },
+            //         error: function (response) {
+            //             alert("erroe")
+            //         }
+            //     });
+            // })
+            
+            // //b- load xml
+            //     $("input:eq(1)").click(function(){
+            //         $.ajax({
+            //             type: "get",
+            //             url: "new.xml",
+            //             dataType: "xml",
+            //             success: function (response) {
+            //                 console.log(response);
+            //             },
+            //             error: function (response) {
+            //                 alert("erroe")
+            //             }
+            //         });
+            //     })
+
+            // 2-fetch
+
+            // $("input:eq(2)").click(async function () {
+            //     // fetch("https://api.chucknorris.io/jokes/random").then(function(res){console.log(res);})
+            //     let data = await fetch("https://api.chucknorris.io/jokes/random");
+            //     let response = await data.json();
+            //     console.log(await response.value);
+            // })
+
+            
+
+
+
+
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <input type="button" value="load html">
+    <input type="button" value="load XML">
+    <input type="button" value="fetsh">
+</body>
+</html>
